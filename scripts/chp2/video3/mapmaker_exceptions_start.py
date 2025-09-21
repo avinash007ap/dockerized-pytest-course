@@ -5,6 +5,9 @@ class Point():
         self.latitude = latitude
         self.longitude = longitude
 
+        if not (-90 <= latitude <= 90) or not (-90 <= longitude <= 90):
+            raise ValueError("Invalid latitude or longitude")
+
 
     def get_lat_long(self):
         return (self.latitude, self.longitude)
